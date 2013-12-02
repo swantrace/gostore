@@ -44,6 +44,8 @@ GEM
     arel (3.0.3)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2-x86-mingw32)
+    bootstrap-sass (3.0.2.1)
+      sass (~> 3.2)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
@@ -147,7 +149,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.38)
-    uglifier (2.3.1)
+    uglifier (2.3.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     warden (1.2.3)
@@ -158,7 +160,9 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  bootstrap-sass (~> 3.0.2.1)
   coffee-rails (~> 3.2.1)
+  devise (~> 3.2.2)
   jquery-rails
   meta_search (>= 1.1.0.pre)
   pg (= 0.15.1)
