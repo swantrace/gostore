@@ -1,5 +1,8 @@
 Gostore::Application.routes.draw do
-  get "line_items/create"
+
+
+  resources :line_items
+
 
   resources :categories
 
