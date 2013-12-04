@@ -1,8 +1,22 @@
-<div class="entry">
-	<%= image_tag(product.image_url) %>
-	<h3><%= link_to product.title, store_product_path(product) %></h3>
-	<%= sanitize(product.description) %>
-	<div class="price_line">
-		<span class="price"><%= number_to_currency(product.price) %></span>
-	</div>
-</div>
+<table>
+	<tr class="<%= cycle('list_line_odd','list_line_even') %>">
+	<td>
+		<%= image_tag(product.image_url, :class => 'img-responsive', :alt => 'Responsive_image') %>
+	</td>
+	<td class='list_description'>
+		<dl>
+			<dt><%= link_to product.title, store_product_path(product) %></dt>
+			<dd>
+				<%= product.description %>
+			</dd>
+		</dl>
+	</td>
+	<td>
+		<%= number_to_currency(product.price) %>
+	</td>
+	<tr>
+</table>
+
+
+
+<!-- truncate(strip_tags(product.description), :length => 80) -->

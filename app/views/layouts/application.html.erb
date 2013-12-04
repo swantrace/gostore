@@ -7,8 +7,52 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<div class="container">	
+		<div class="page-header">
+		  <h1>Go Store <small>Get Anything you need about GO</small></h1>
+		</div>
+		<nav class="navbar navbar-default" role="navigation">
+	    <ul class="nav navbar-nav">
+	      <li class="active"><%= link_to 'Home', root_path, :class => 'hello' %></li>
+				<li><%= link_to "About Us" %></li>
+	      <li><%= link_to 'Go Game Sets' %></li>
+	      <li><%= link_to 'Go Boards' %></li>
+	      <li><%= link_to 'Go Stones' %></li>
+	      <li><%= link_to 'Go Bowls' %></li>
+	      <li><%= link_to "Contanct Us" %></li>
+	    </ul>
+	  </nav>
+	  <div class="row">
+	  	<aside id="side" class="col-md-2">
+				<form action="">
+					<div class="input-control select">
+						<select name="category">
+							<option value="Any">Any</option>
+							<option value="set">Set</option>
+							<option value="board">Board</option>
+							<option value="stone">Stone</option>
+							<option value="bowl">Bowl</option>
+						</select>
+					</div>
+					 <label class="input-control checkbox">
+						<input type="checkbox">
+						<span class="helper">New</span>
+					</label>
+					<label class="input-control checkbox">
+						<input type="checkbox">
+						<span class="helper">Sale</span>
+					</label>
+         <div class="input-control text">
+		        <input type="text" />
+		        <button class="helper" type="submit">Search</button>
+        	</div>
+				</form>	  	
+	  	</aside>
+			<div class="col-md-10">
+			<%= yield %>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>

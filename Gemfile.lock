@@ -44,8 +44,6 @@ GEM
     arel (3.0.3)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2-x86-mingw32)
-    bootstrap-sass (3.0.2.1)
-      sass (~> 3.2)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
@@ -71,7 +69,7 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hike (1.2.3)
-    i18n (0.6.5)
+    i18n (0.6.9)
     inherited_resources (1.4.1)
       has_scope (~> 0.6.0.rc)
       responders (~> 1.0.0.rc)
@@ -160,7 +158,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
-  bootstrap-sass (~> 3.0.2.1)
   coffee-rails (~> 3.2.1)
   devise (~> 3.2.2)
   jquery-rails
