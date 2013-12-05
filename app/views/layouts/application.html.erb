@@ -24,29 +24,7 @@
 	  </nav>
 	  <div class="row">
 	  	<aside id="side" class="col-md-2">
-				<form action="">
-					<div class="input-control select">
-						<select name="category">
-							<option value="Any">Any</option>
-							<option value="set">Set</option>
-							<option value="board">Board</option>
-							<option value="stone">Stone</option>
-							<option value="bowl">Bowl</option>
-						</select>
-					</div>
-					 <label class="input-control checkbox">
-						<input type="checkbox">
-						<span class="helper">New</span>
-					</label>
-					<label class="input-control checkbox">
-						<input type="checkbox">
-						<span class="helper">Sale</span>
-					</label>
-         		<div class="input-control text">
-		        <input type="text" />
-		        <button class="helper" type="submit">Search</button>
-        	</div>
-		</form>
+		<%= render 'store/search' %>
 		  <div id="cart">
         <%= render(@cart) %>
       </div>	  	

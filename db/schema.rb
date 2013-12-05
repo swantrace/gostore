@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131205075720) do
+ActiveRecord::Schema.define(:version => 20131205164932) do
 
   create_table "about_pages", :force => true do |t|
     t.text     "content"
@@ -74,12 +74,35 @@ ActiveRecord::Schema.define(:version => 20131205075720) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "customers", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "line_items", :force => true do |t|
     t.integer  "product_id"
     t.integer  "cart_id"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.integer  "quantity",   :default => 1
+    t.integer  "order_id"
+    t.decimal  "price"
+  end
+
+  create_table "orders", :force => true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "email"
+    t.string   "pay_type"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "status"
+    t.integer  "province_id"
+    t.integer  "customer_id"
+    t.decimal  "price"
   end
 
   create_table "products", :force => true do |t|
@@ -95,6 +118,15 @@ ActiveRecord::Schema.define(:version => 20131205075720) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "category_id"
+  end
+
+  create_table "provinces", :force => true do |t|
+    t.string   "name"
+    t.decimal  "pst"
+    t.decimal  "gst"
+    t.decimal  "hst"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

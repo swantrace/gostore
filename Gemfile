@@ -30,7 +30,7 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
-gem 'activeadmin'
+gem "activeadmin"
 gem "meta_search",    '>= 1.1.0.pre'
 gem "devise", "~> 3.2.2"
 gem 'kaminari'
