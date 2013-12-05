@@ -161,6 +161,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise (~> 3.2.2)
   jquery-rails
+  kaminari
   meta_search (>= 1.1.0.pre)
   pg (= 0.15.1)
   rails (= 3.2.15)

@@ -1,4 +1,32 @@
 <%= render @product %>
-
-<p><%= link_to 'Home', root_path %></p>
+<table border='1'>
+	<tr>
+		<td class="firstcolumn">Name</td>
+		<td class="secondcolumn"><%= @product.title %></td>
+	</tr>
+	<tr>
+		<td class="firstcolumn" valign="top">Details</td> 
+		<td class="secondcolumn"><%= @product.description %></td>
+	</tr>
+	<tr>
+		<td class="firstcolumn">Material</td>
+		<td class="secondcolumn"><%= @product.material %></td>
+	</tr>
+	<tr>
+		<td class="firstcolumn">Price</td>
+		<td class="secondcolumn"><%= number_to_currency(@product.price) %></td>
+	</tr>
+	<% if @product.mark_as_sale.present? %>
+		<tr>
+			<td class="firstcolumn">On Sale</td>
+			<td class="secondcolumn"><%= number_to_currency(@product.sale_price) %></td>
+		</tr>
+	<% end %>
+	<% if @product.quantity > 0 %>
+		<tr><td colspan='2'>In Stock</td></tr>
+	<% else %>
+		<tr><td colspan='2'>Out of Stock</td></tr>
+	<% end %>
+</ul>
+</div>
 

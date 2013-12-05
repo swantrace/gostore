@@ -1,9 +1,10 @@
 <div class="entry">
-      <%= image_tag(product.image_url, :class => 'img-responsive', :alt => 'Responsive_image', :width => '200') %>
-      <h3><%= link_to product.title, store_product_path(product) %></h3>
-      <%= sanitize(product.description) %>
-     <div class="price_line">
-        <span class="price"><%= number_to_currency(product.price) %></span>
-            <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
-     </div>
+<div>
+<%= image_tag(product.image_url, :class => 'img-responsive', :alt => 'Responsive_image', :width => '200') %>
+<%= link_to product.title, store_product_path(product) %>
+</div>
+<div class="price_line">
+<span class="price"><%= number_to_currency(product.price) %></span>
+<%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+</div>
 </div>

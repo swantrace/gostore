@@ -1,5 +1,8 @@
 Gostore::Application.routes.draw do
+  resources :orders
 
+
+  resources :carts
 
   resources :line_items
 
@@ -8,7 +11,11 @@ Gostore::Application.routes.draw do
 
 
   root :to=> 'store#index', :via => :get
+  root :to=> 'store#index', :via => :post
   match 'store/:id' => 'store#show', :as => 'store_product', :via => :get
+  match '/about_us' => 'about_pages#show', :as => 'about_us', :via => :get
+  match '/contact_us' => 'contact_pages#show', :as => 'contact_us', :via => :get
+  match '/:category' => 'store#index', :as => 'store_category', :via => :get
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

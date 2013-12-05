@@ -1,9 +1,17 @@
 class StoreController < ApplicationController
   def index
-    @products = Product.all
+    @cart = current_cart
+    if params[:category].present?
+      if Category.find_by_name(params[:category]).present?
+         @products = Category.find_by_name(params[:category]).products
+      end     
+    else
+      @products = Product.all
+    end
   end
   
   def show
+    @cart = current_cart
     @product = Product.find(params[:id])
   end
   

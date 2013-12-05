@@ -14,12 +14,12 @@
 		<nav class="navbar navbar-default" role="navigation">
 	    <ul class="nav navbar-nav">
 	      <li class="active"><%= link_to 'Home', root_path, :class => 'hello' %></li>
-				<li><%= link_to "About Us" %></li>
-	      <li><%= link_to 'Go Game Sets' %></li>
-	      <li><%= link_to 'Go Boards' %></li>
-	      <li><%= link_to 'Go Stones' %></li>
-	      <li><%= link_to 'Go Bowls' %></li>
-	      <li><%= link_to "Contanct Us" %></li>
+				<li><%= link_to "About Us", about_us_path %></li>
+	      <li><%= link_to 'Go Game Sets', store_category_path(:category => 'Set') %></li>
+	      <li><%= link_to 'Go Boards', store_category_path(:category => 'Board') %></li>
+	      <li><%= link_to 'Go Stones', store_category_path(:category => 'Stone') %></li>
+	      <li><%= link_to 'Go Bowls', store_category_path(:category => 'Bowl') %></li>
+	      <li><%= link_to "Contanct Us", contact_us_path %></li>
 	    </ul>
 	  </nav>
 	  <div class="row">
@@ -42,11 +42,14 @@
 						<input type="checkbox">
 						<span class="helper">Sale</span>
 					</label>
-         <div class="input-control text">
+         		<div class="input-control text">
 		        <input type="text" />
 		        <button class="helper" type="submit">Search</button>
         	</div>
-				</form>	  	
+		</form>
+		  <div id="cart">
+        <%= render(@cart) %>
+      </div>	  	
 	  	</aside>
 			<div class="col-md-10">
 			<%= yield %>
